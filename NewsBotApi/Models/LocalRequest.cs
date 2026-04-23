@@ -1,0 +1,58 @@
+﻿namespace NewsBotApi.Models
+{
+
+    public class LocalRootobject
+    {
+        public string status { get; set; }
+        public string request_id { get; set; }
+        public LocalDatum[] data { get; set; }
+    }
+
+    public class LocalDatum
+    {
+        public string title { get; set; }
+        public string link { get; set; }
+        public string snippet { get; set; }
+        public string photo_url { get; set; }
+        public string thumbnail_url { get; set; }
+        public DateTime published_datetime_utc { get; set; }
+        public string[] authors { get; set; }
+        public string source_url { get; set; }
+        public string source_name { get; set; }
+        public string source_logo_url { get; set; }
+        public string source_favicon_url { get; set; }
+        public string source_publication_id { get; set; }
+        public LocalRelated_Topics[] related_topics { get; set; }
+        public LocalSub_Articles[] sub_articles { get; set; }
+        public string story_id { get; set; }
+    }
+
+    public class LocalRelated_Topics
+    {
+        public string topic_id { get; set; }
+        public string topic_name { get; set; }
+    }
+
+    public class LocalSub_Articles
+    {
+        public string title { get; set; }
+        public string link { get; set; }
+        public string photo_url { get; set; }
+        public string thumbnail_url { get; set; }
+        public DateTime published_datetime_utc { get; set; }
+        public string[] authors { get; set; }
+        public string source_url { get; set; }
+        public string source_name { get; set; }
+        public string source_logo_url { get; set; }
+        public string source_favicon_url { get; set; }
+        public string source_publication_id { get; set; }
+        public LocalRelated_Topics1[] related_topics { get; set; }
+    }
+
+    public class LocalRelated_Topics1
+    {
+        public string topic_id { get; set; }
+        public string topic_name { get; set; }
+    }
+
+}
