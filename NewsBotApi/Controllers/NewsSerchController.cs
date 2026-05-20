@@ -15,16 +15,15 @@ namespace NewsBotApi.Controllers
             string lang = "uk",
             int limit = 10)
         {
-            string encodedQuery = Uri.EscapeDataString(query);
-
+            
             var client = new HttpClient();
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri($"https://real-time-news-data.p.rapidapi.com/search?query={encodedQuery}&limit={limit}&time_published=anytime&country={country}&lang={lang}"),
+                RequestUri = new Uri($"https://real-time-news-data.p.rapidapi.com/search?query={query}&limit={limit}&time_published=anytime&country={country}&lang={lang}"),
                 Headers =
                 {
-                    { "x-rapidapi-key", "d5e2130dc9msha841dc32eb1393bp174731jsnf433dec9501d" },
+                    { "x-rapidapi-key", Constants.RapidApiKey },
                     { "x-rapidapi-host", "real-time-news-data.p.rapidapi.com" },
                 },
             };
@@ -52,7 +51,7 @@ namespace NewsBotApi.Controllers
                 RequestUri = new Uri($"https://real-time-news-data.p.rapidapi.com/top-headlines?country={country}&lang={lang}&limit={limit}"),
                 Headers =
                 {
-                    { "x-rapidapi-key", "d5e2130dc9msha841dc32eb1393bp174731jsnf433dec9501d" },
+                    { "x-rapidapi-key", Constants.RapidApiKey },
                     { "x-rapidapi-host", "real-time-news-data.p.rapidapi.com" },
                 },
             };
@@ -81,7 +80,7 @@ namespace NewsBotApi.Controllers
                 RequestUri = new Uri($"https://real-time-news-data.p.rapidapi.com/local-headlines?query={query}&country={country}&lang={lang}&limit={limit}"),
                 Headers =
                 {
-                    { "x-rapidapi-key", "d5e2130dc9msha841dc32eb1393bp174731jsnf433dec9501d" },
+                    { "x-rapidapi-key", Constants.RapidApiKey },
                     { "x-rapidapi-host", "real-time-news-data.p.rapidapi.com" },
                 },
             };
